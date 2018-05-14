@@ -23,7 +23,7 @@ try:
             annonce = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/v230/' + offre["value"])
             id_offre = offre["value"]
             if annonce.status_code == 200:
-                es.index(index='test-offres3', doc_type='annonce', id=id_annonce, body=annonce.json())
+                es.index(index='offres', doc_type='annonce', id=id_annonce, body=annonce.json())
                 id_annonce += 1
         curseur -= 1000
         response = requests.get("http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=securite&curseur=" + str(curseur))
