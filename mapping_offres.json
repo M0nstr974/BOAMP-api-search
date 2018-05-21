@@ -2663,7 +2663,7 @@
                                   "type" : "long"
                               },
                               "datepublication" : {
-                                  "type" : "long"
+                                  "type" : "date"
                               },
                               "nature" : {
                                   "properties" : {
@@ -2838,10 +2838,10 @@
                               "publicationelectronique" : {
                                   "properties" : {
                                   "datefindiffusion" : {
-                                      "type" : "long"
+                                      "type" : "date"
                                   },
                                   "datepublication" : {
-                                      "type" : "long"
+                                      "type" : "date"
                                   }
                                   }
                               },
@@ -2851,7 +2851,7 @@
                                       "type" : "long"
                                   },
                                   "datepublication" : {
-                                      "type" : "long"
+                                      "type" : "date"
                                   },
                                   "numannonce" : {
                                       "type" : "long"
@@ -3427,13 +3427,13 @@
                           }
                       },
                       "datefindiffusion" : {
-                          "type" : "long"
+                          "type" : "date"
                       },
                       "datelimitereponse" : {
-                          "type" : "long"
+                          "type" : "date"
                       },
                       "datepublication" : {
-                          "type" : "long"
+                          "type" : "date"
                       },
                       "deppublication" : {
                           "type" : "text",
@@ -3690,10 +3690,10 @@
                               "publicationelectronique" : {
                                   "properties" : {
                                   "datefindiffusion" : {
-                                      "type" : "long"
+                                      "type" : "date"
                                   },
                                   "datepublication" : {
-                                      "type" : "long"
+                                      "type" : "date"
                                   }
                                   }
                               },
@@ -3703,7 +3703,7 @@
                                       "type" : "long"
                                   },
                                   "datepublication" : {
-                                      "type" : "long"
+                                      "type" : "date"
                                   },
                                   "numannonce" : {
                                       "type" : "long"
