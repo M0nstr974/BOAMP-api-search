@@ -1,0 +1,89 @@
+[
+  {
+    "_id": "08167b10-603e-11e8-b139-1b9fe09d357a",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Visualisation - Appels d'offres",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":2,\"i\":\"1\",\"w\":2,\"x\":0,\"y\":0},\"id\":\"21ce90d0-603c-11e8-b139-1b9fe09d357a\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"embeddableConfig\":{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":2,\"direction\":\"asc\"}}}},\"gridData\":{\"h\":5,\"i\":\"2\",\"w\":12,\"x\":0,\"y\":3},\"id\":\"08939720-603a-11e8-b139-1b9fe09d357a\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":5,\"x\":2,\"y\":0},\"id\":\"b9ea5d90-6073-11e8-b139-1b9fe09d357a\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"5\",\"w\":5,\"x\":7,\"y\":0},\"id\":\"af2afbb0-6075-11e8-b139-1b9fe09d357a\",\"panelIndex\":\"5\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"language\":\"lucene\",\"query\":\"\"},\"filter\":[{\"query\":{\"bool\":{\"should\":[{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Informatique (maintenance serveurs et réseaux)\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Informatique (prestations de services)\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Sécurité\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Audit\"}}],\"minimum_should_match\":1}},\"meta\":{\"negate\":false,\"index\":\"c7974790-6123-11e8-b139-1b9fe09d357a\",\"disabled\":true,\"alias\":\"Filtre catégorie : Informatique\",\"type\":\"custom\",\"key\":\"query\",\"value\":\"{\\\"bool\\\":{\\\"should\\\":[{\\\"match_phrase\\\":{\\\"gestion.indexation.descripteurs.descripteur.libelle.keyword\\\":\\\"Informatique (maintenance serveurs et réseaux)\\\"}},{\\\"match_phrase\\\":{\\\"gestion.indexation.descripteurs.descripteur.libelle.keyword\\\":\\\"Informatique (prestations de services)\\\"}},{\\\"match_phrase\\\":{\\\"gestion.indexation.descripteurs.descripteur.libelle.keyword\\\":\\\"Sécurité\\\"}},{\\\"match_phrase\\\":{\\\"gestion.indexation.descripteurs.descripteur.libelle.keyword\\\":\\\"Audit\\\"}}],\\\"minimum_should_match\\\":1}}\"},\"$state\":{\"store\":\"globalState\"}},{\"query\":{\"match\":{\"donnees.objet.caracteristiques.principales\":\"sécurité informatique audit\"}},\"meta\":{\"index\":\"c7974790-6123-11e8-b139-1b9fe09d357a\",\"disabled\":false,\"alias\":\"Filtre description annonce : Informatique\",\"type\":\"phrase\",\"key\":\"donnees.objet.caracteristiques.principales\",\"value\":\" - \",\"params\":\"sécurité informatique audit\",\"negate\":false},\"$state\":{\"store\":\"appState\"}},{\"meta\":{\"index\":\"c7974790-6123-11e8-b139-1b9fe09d357a\",\"type\":\"phrases\",\"key\":\"gestion.indexation.descripteurs.descripteur.libelle.keyword\",\"value\":\"Chauffage (travaux), Batiment, Menuiserie, Electricité (travaux), Sécurité incendie, Plomberie (travaux), Maîtrise d'oeuvre, Voirie, Alarme, Bâtiment\",\"params\":[\"Chauffage (travaux)\",\"Batiment\",\"Menuiserie\",\"Electricité (travaux)\",\"Sécurité incendie\",\"Plomberie (travaux)\",\"Maîtrise d'oeuvre\",\"Voirie\",\"Alarme\",\"Bâtiment\"],\"negate\":true,\"disabled\":false,\"alias\":\"Exclusions\"},\"query\":{\"bool\":{\"should\":[{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Chauffage (travaux)\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Batiment\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Menuiserie\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Electricité (travaux)\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Sécurité incendie\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Plomberie (travaux)\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Maîtrise d'oeuvre\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Voirie\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Alarme\"}},{\"match_phrase\":{\"gestion.indexation.descripteurs.descripteur.libelle.keyword\":\"Bâtiment\"}}],\"minimum_should_match\":1}},\"$state\":{\"store\":\"appState\"}}],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "b9ea5d90-6073-11e8-b139-1b9fe09d357a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Répartition des annonces par ville",
+      "visState": "{\n  \"title\": \"Répartition des annonces par ville\",\n  \"type\": \"horizontal_bar\",\n  \"params\": {\n    \"type\": \"histogram\",\n    \"grid\": {\n      \"categoryLines\": false,\n      \"style\": {\n        \"color\": \"#eee\"\n      }\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 200\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 75,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Nombre d'annonces\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": true,\n        \"type\": \"histogram\",\n        \"mode\": \"stacked\",\n        \"data\": {\n          \"label\": \"Nombre d'annonces\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"radiusRatio\": 51\n  },\n  \"aggs\": [\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"donnees.identite.ville.keyword\",\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"size\": 10,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"customLabel\": \"Villes\"\n      }\n    },\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"customLabel\": \"Nombre d'annonces\"\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"c7974790-6123-11e8-b139-1b9fe09d357a\",\n  \"filter\": [],\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"lucene\"\n  }\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "af2afbb0-6075-11e8-b139-1b9fe09d357a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Répartition des catégories",
+      "visState": "{\n  \"title\": \"Répartition des catégories\",\n  \"type\": \"pie\",\n  \"params\": {\n    \"type\": \"pie\",\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"isDonut\": true,\n    \"labels\": {\n      \"show\": true,\n      \"values\": true,\n      \"last_level\": true,\n      \"truncate\": 100\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"count\",\n      \"schema\": \"metric\",\n      \"params\": {}\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"gestion.indexation.descripteurs.descripteur.libelle.keyword\",\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"size\": 20,\n        \"order\": \"desc\",\n        \"orderBy\": \"1\",\n        \"customLabel\": \"Catégorie\"\n      }\n    }\n  ]\n}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\n  \"index\": \"c7974790-6123-11e8-b139-1b9fe09d357a\",\n  \"filter\": [],\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"lucene\"\n  }\n}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "21ce90d0-603c-11e8-b139-1b9fe09d357a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Nombre d'annonces",
+      "visState": "{\"title\":\"Nombre d'annonces\",\"type\":\"metric\",\"params\":{\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":29}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{\"customLabel\":\"annonces\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"c7974790-6123-11e8-b139-1b9fe09d357a\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "08939720-603a-11e8-b139-1b9fe09d357a",
+    "_type": "visualization",
+    "_source": {
+      "title": "Tableau des annonces",
+      "visState": "{\"title\":\"Tableau des annonces\",\"type\":\"table\",\"params\":{\"perPage\":50,\"showMeticsAtAllLevels\":false,\"showPartialRows\":false,\"showTotal\":false,\"sort\":{\"columnIndex\":0,\"direction\":\"desc\"},\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"donnees.objet.accordcadre.dureemois\",\"customLabel\":\"Durée prévue (mois)\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"gestion.reference.idweb.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\",\"size\":5000000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Numéro d'annonce\"}},{\"id\":\"11\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"bucket\",\"params\":{\"field\":\"gestion.indexation.datefindiffusion\",\"interval\":\"w\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"Date de fin de diffusion\"}},{\"id\":\"5\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"donnees.identite.denomination.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\",\"size\":500000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Institution\"}},{\"id\":\"9\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"gestion.indexation.descripteurs.descripteur.libelle.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\",\"size\":500000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Catégorie\"}},{\"id\":\"7\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"gestion.indexation.resumeobjet.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\",\"size\":500000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Résumé de l'annonce\"}},{\"id\":\"6\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"donnees.identite.ville.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\",\"size\":500000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Ville\"}},{\"id\":\"4\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"donnees.identite.correspondant.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\",\"size\":500000,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Correspondant\"}},{\"id\":\"10\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"donnees.identite.mel.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":true,\"missingBucketLabel\":\"Missing\",\"size\":500000,\"order\":\"desc\",\"orderBy\":\"_term\",\"customLabel\":\"Contact correspondant\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":7,\"direction\":\"asc\"}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"c7974790-6123-11e8-b139-1b9fe09d357a\",\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":\"\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]
