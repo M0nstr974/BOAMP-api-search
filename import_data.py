@@ -30,6 +30,13 @@ def get_imports():
         annonces = reponse.json()["item"]
         for a in annonces:
             imports_ids.add(a['value'])
+            
+def get_daily_imports():
+    for s in mots_cles:
+        reponse = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=dateparution%3E%3D'+currentDate()+'%20' + s) # >1000 items response not handled
+        annonces = reponse.json()["item"]
+        for a in annonces:
+            imports_ids.add(a['value'])
 
 def import_in_es():
     i = 1
