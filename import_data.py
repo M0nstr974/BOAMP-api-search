@@ -43,9 +43,10 @@ def import_in_es():
     try:
         for id_annonce in imports_ids:
             annonce = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/v230/' + id_annonce)
-            if annonce.status_code == 200:
-                es.index(index=INDEX_NAME, doc_type='annonce', id=i, body=annonce.json())
-                i += 1
+           if annonce.status_code == 200:
+                f = annonce.json()
+                f["input"] = {"actif": True, "commentaire": None, "nom": None}
+                es.index(index=INDEX_NAME, doc_type='annonce', id=id_es, body=f)
             else:
                 print(str(id_annonce))
     except:
