@@ -3999,7 +3999,20 @@
                       }
                   }
                   }
-              }
+              },
+              "input": {
+                "properties": {
+                    "actif": {
+                        "type": "boolean"
+                    },
+                    "commentaire": {
+                        "type": "text"
+                    },
+                    "nom": {
+                        "type": "text"
+                    }
+                }
+            }
           }
       }
   },
