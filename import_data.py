@@ -1,13 +1,22 @@
+from datetime import datetime 
 from elasticsearch import Elasticsearch
 import requests
 import json
 
 INDEX_NAME = 'annonces'
 MAPPING_FILEPATH = 'mapping_offres.json'
+HOST_NAME = 'localhost'
+HOST_PORT = 9200
 
-es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
+
+es = Elasticsearch([{'host': HOST_NAME, 'port': HOST_PORT}])
 mots_cles = ['securite', 'informatique', 'audit']
 imports_ids = set()
+
+
+def currentDate():
+  return datetime.today().strftime("%Y%m%d")
+   
 
 def init():
     with open(MAPPING_FILEPATH) as f:
@@ -17,7 +26,7 @@ def init():
 
 def get_imports():
     for s in mots_cles:
-        reponse = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=datefindiffusion%3E%3D20180527%20' + s) # >1000 items response not handled
+        reponse = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=datefindiffusion%3E%3D'+currentDate()+'%20' + s) # >1000 items response not handled
         annonces = reponse.json()["item"]
         for a in annonces:
             imports_ids.add(a['value'])
