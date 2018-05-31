@@ -46,7 +46,7 @@ def import_in_es():
            if annonce.status_code == 200:
                 f = annonce.json()
                 f["input"] = {"actif": True, "commentaire": None, "nom": None}
-                es.index(index=INDEX_NAME, doc_type='annonce', id=id_es, body=f)
+                es.index(index=INDEX_NAME, doc_type='annonce', id=i, body=f)
             else:
                 print(str(id_annonce))
     except:
