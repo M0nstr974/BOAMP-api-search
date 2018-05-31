@@ -3731,7 +3731,7 @@
                   "reference" : {
                       "properties" : {
                       "idweb" : {
-                          "type" : "text",
+                          "type" : "keyword",
                           "fields" : {
                           "keyword" : {
                               "type" : "keyword",
@@ -3999,7 +3999,20 @@
                       }
                   }
                   }
-              }
+              },
+              "input": {
+                "properties": {
+                    "actif": {
+                        "type": "boolean"
+                    },
+                    "commentaire": {
+                        "type": "text"
+                    },
+                    "nom": {
+                        "type": "text"
+                    }
+                }
+            }
           }
       }
   },
