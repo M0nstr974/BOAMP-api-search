@@ -3,4 +3,4 @@ pip install requests elasticsearch
 
 2. Lancer elasticsearch
 
-3. Exécuter parsing.py
+3. Exécuter import_data.py
