@@ -21,17 +21,18 @@ def init():
 
 def get_imports():
     for s in mots_cles:
-        reponse = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=datefindiffusion%3E%3D20180527%20' + s) # >1000 items response not handled
+        reponse = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=datefindiffusion%3E%3D20180527%20' + s)
         annonces = reponse.json()["item"]
         for a in annonces:
             imports_ids.add(a['value'])
 
 def get_daily_imports():
     for s in mots_cles:
-        reponse = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=dateparution%3E%3D'+currentDate()+'%20' + s) # >1000 items response not handled
-        annonces = reponse.json()["item"]
-        for a in annonces:
-            imports_ids.add(a['value'])
+        reponse = requests.get('http://api.dila.fr/opendata/api-boamp/annonces/search?criterion=dateparution%3E%3D'+currentDate()+'%20' + s)
+        if reponse.status_code == 200:
+            annonces = reponse.json()["item"]
+            for a in annonces:
+                imports_ids.add(a['value'])
     import_in_es()
 
 def currentDate():
@@ -52,11 +53,9 @@ def import_in_es():
         print('ERREUR : ' + str(id_annonce))
 
 def update_annonce(id_annonce, bool_rejet, str_nom, str_commentaire):
-    id_es= search(id_annonce)
-    if bool_rejet:
-        es.update(index=INDEX_NAME, doc_type=DOC_TYPE, id=id_es, body={"doc": {"input": {"actif": True, "commentaire": str_commentaire, "nom": str_nom}}})
-    else:
-        es.update(index=INDEX_NAME, doc_type=DOC_TYPE, id=id_es, body={"doc": {"input": {"actif": False, "commentaire": str_commentaire, "nom": str_nom}}})
+    id_es = search(id_annonce)
+    if id_es:
+        es.update(index=INDEX_NAME, doc_type=DOC_TYPE, id=id_es, body={"doc": {"input": {"actif": bool_rejet, "commentaire": str_commentaire, "nom": str_nom}}})
 
 #retourne l'id elasticsearch correspondant à un id d'annonce
 def search(id_annonce):
@@ -68,8 +67,10 @@ def search(id_annonce):
         }
     })
     result = es.search(index=INDEX_NAME, body=query)
-    id_es = result["hits"]["hits"][0]["_id"]
-
+    if result["hits"]["total"] > 0:
+        id_es = result["hits"]["hits"][0]["_id"]
+    else:
+        return None
     return id_es
 
 def delete_outdated():    
